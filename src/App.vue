@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
+//import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import LaravelVuePagination from './LaravelVuePagination.vue';
 
 const dummyData = [
