@@ -1,8 +1,8 @@
 <template>
     <renderless-laravel-vue-pagination :data="data" :limit="limit" :show-disabled="showDisabled" v-on:pagination-change-page="onPaginationChangePage">
         <ul class="pages" v-if="computed.total > computed.perPage" slot-scope="{ data, limit, computed, prevButtonEvents, nextButtonEvents, pageButtonEvents }">
-            <li class="page-item pagination-prev-nav" :class="{'disabled': !computed.prevPageUrl}" v-if="computed.prevPageUrl || showDisabled">
-                <a class="page-link" href="#" aria-label="Previous" :tabindex="!computed.prevPageUrl && -1" v-on="prevButtonEvents">
+            <li class="" :class="{'disabled': !computed.prevPageUrl}" v-if="computed.prevPageUrl || showDisabled">
+                <a class="" href="#" aria-label="Previous" :tabindex="!computed.prevPageUrl && -1" v-on="prevButtonEvents">
                     <slot name="prev-nav">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>
