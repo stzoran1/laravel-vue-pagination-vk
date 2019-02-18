@@ -18,11 +18,11 @@
                 </li>
             </ul>
         </div>
-        <div class="column text-right hidden-xs-down">
+        <div class="column text-right hidden-xs-down" slot-scope="{ data, limit, computed, prevButtonEvents, nextButtonEvents, pageButtonEvents }">
             <!--<li :class="{'disabled': !computed.nextPageUrl}" v-if="computed.nextPageUrl || showDisabled">-->
             <!--</li>-->
-            <a class="btn btn-outline-secondary btn-sm" href="#" aria-label="Slijedeća"
-               :tabindex="!computed.nextPageUrl && -1" v-on="nextButtonEvents">Slijedeća&nbsp;<i
+            <a class="btn btn-outline-secondary btn-sm" href="#" :aria-label="lang('fe.next')"
+               :tabindex="!computed.nextPageUrl && -1" v-on="nextButtonEvents">{{ lang('fe.next') }}&nbsp;<i
                     class="icon-chevron-right"></i></a>
         </div>
     </renderless-laravel-vue-pagination>
