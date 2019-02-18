@@ -1,7 +1,8 @@
 <template>
     <renderless-laravel-vue-pagination :data="data" :limit="limit" :show-disabled="showDisabled"
                                        v-on:pagination-change-page="onPaginationChangePage">
-        <nav class="pagination" v-if="computed.total > computed.perPage" slot-scope="{ data, limit, computed, prevButtonEvents, nextButtonEvents, pageButtonEvents }">
+        <nav class="pagination" v-if="computed.total > computed.perPage"
+             slot-scope="{ data, limit, computed, prevButtonEvents, nextButtonEvents, pageButtonEvents }">
             <div class="column">
                 <ul class="pages">
                     <!--<li class="" :class="{'disabled': !computed.prevPageUrl}" v-if="computed.prevPageUrl || showDisabled">
@@ -22,8 +23,12 @@
                 <!--<li :class="{'disabled': !computed.nextPageUrl}" v-if="computed.nextPageUrl || showDisabled">-->
                 <!--</li>-->
                 <a class="btn btn-outline-secondary btn-sm" href="#" :aria-label="lang('fe.next')"
-                   :tabindex="!computed.nextPageUrl && -1" v-on="nextButtonEvents">{{ lang('fe.next') }}&nbsp;<i
-                        class="icon-chevron-right"></i></a>
+                   :tabindex="!computed.nextPageUrl && -1" v-on="nextButtonEvents">{{ lang('fe.next') }}&nbsp;
+                    <slot name="next-nav">
+                        <i class="icon-chevron-right"></i>
+
+                    </slot>
+                </a>
             </div>
         </nav>
     </renderless-laravel-vue-pagination>
